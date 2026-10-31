@@ -1,0 +1,7 @@
+# Day 8 Reflection
+
+The most difficult concept in this course was understanding why a system that works perfectly for one user can break when thousands use it at once. Concurrency was hard to picture, especially the idea that two requests can both read "seat available" and both succeed. I overcame it by working through the seat example step by step: first the broken "read, then write" version, then the single conditional update inside a transaction, backed by a unique constraint. Seeing that the database, not the cache or the waiting room, is what guarantees correctness made everything click. Practising with numbers also helped, because estimating requests per second showed me where the real bottleneck is.
+
+Based on the feedback I received, I would improve my capstone in two ways. First, I would add better error handling, so users see clear messages instead of silent failures when a request returns something like a 404 or 409. Second, I would add automated tests for the main API endpoints and clean up the project structure and README so other people can run it easily.
+
+Next, I want to learn more about databases in depth: indexes, transactions and query performance. I also want to learn about authentication and security, and about deploying an application so that it can handle real traffic using caching and load balancing. Finally, I want to practise designing more systems with the six-step framework, because explaining trade-offs clearly is a skill I want to keep building.
